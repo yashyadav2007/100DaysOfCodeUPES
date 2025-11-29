@@ -3,15 +3,20 @@
 #include <time.h>
 
 int main() {
-    FILE *fp = fopen("data.txt", "a");
+    FILE *fp = fopen("log.txt", "a");
     if (!fp) {
-        perror("File error");
+        perror("Error opening file");
         return 1;
     }
 
     time_t now = time(NULL);
-    fprintf(fp, "Auto entry at %s", ctime(&now));
+    fprintf(fp, "Entry at: %s", ctime(&now));
     fclose(fp);
 
     return 0;
 }
+
+
+
+
+
